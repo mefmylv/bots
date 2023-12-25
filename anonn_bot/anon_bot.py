@@ -173,7 +173,7 @@ async def handle_text(message: types.Message):
     else:
         if user_id in chat_pairs and chat_pairs[user_id] is not None:
             partner_id = chat_pairs[user_id]
-            await bot.send_message(partner_id, f"Пользователь {message.from_user.first_name}: {message.text}")
+            await bot.send_message(partner_id, f"Аноним: {message.text}")
             print(f"Отправлено сообщение пользователю {partner_id}: {message.text}")
         elif message.text == '/finish':
             await finish(message)
